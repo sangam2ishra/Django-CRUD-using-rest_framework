@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'products',
 ]
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'products.exceptions.custom_exception_handler',
+    # Other DRF settings...
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
