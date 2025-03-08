@@ -11,3 +11,8 @@ class ProductSerializer(serializers.ModelSerializer):
         if value>1000:
             raise serializers.ValidationError("price should be less than 1000")
         return value
+    
+    def validate_quantity(self, value):
+        if value<10:
+            raise serializers.ValidationError("quantity should not be lesser than 10")
+        return value
